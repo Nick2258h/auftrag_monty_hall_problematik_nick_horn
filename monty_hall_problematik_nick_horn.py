@@ -1,6 +1,10 @@
+# @Author: Nick Horn
+# @Date: 12-11-2025 16:58:22
+# @Description: Temperaturumrechner zwischen 
+
 import random
 
-# choose mode: play or simulate
+# play or simulate
 wahl_modus = input("Willst du selbst spielen (s) oder die Simulation starten (x)? ")
 
 türen = ["ziege", "ziege", "auto"]
@@ -10,7 +14,7 @@ if wahl_modus == "s":
     print("Es gibt 3 Türen: 0, 1, 2")
     wahl = int(input("Welche Tür wählst du? (0-2): "))
 
-    # host opens a goat door
+    # opens a goat door
     ziege_türen = [i for i in range(3) if türen[i] == "ziege"]
     if wahl in ziege_türen:
         geöffnete_tür = random.choice([z for z in ziege_türen if z != wahl])
@@ -20,7 +24,7 @@ if wahl_modus == "s":
     print("Tür", geöffnete_tür, "war eine Ziege.")
     wechsel = input("Willst du wechseln? (j/n): ")
 
-    # switch if user wants
+    # switch 
     if wechsel == "j":
         neue_wahl = [0,1,2]
         neue_wahl.remove(wahl)
